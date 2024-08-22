@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: #0f0f0f; /* Dark background for contrast */
+    font-family: 'Orbitron', sans-serif; /* Futuristic font */
+    color: #e0e0e0; /* Light text color for better readability */
+}
+
+/* Image Styling */
+.image {
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover; /* Ensure the image covers the container */
+    display: block;
+    max-width: 100%;
+    filter: brightness(60%); /* Dim the image for better text visibility */
+}
+
+/* Content Container */
+.content {
+    position: absolute; /* Position the content over the image */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Textbox Styling */
+.textbox {
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5); /* Futuristic green glow */
+}
+
+/* Heading Styling */
+.textbox h1 {
+    font-size: 2.5rem; /* Larger text for emphasis */
+    color: #00ff99; /* Neon green color */
+    text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99; /* Glowing text effect */
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* Add some futuristic animations */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99, 0 0 30px #00ff99;
+    }
+    50% {
+        text-shadow: 0 0 20px #00ff99, 0 0 40px #00ff99, 0 0 60px #00ff99;
+    }
+    100% {
+        text-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99, 0 0 30px #00ff99;
+    }
+}
+
+.textbox h1 {
+    animation: glow 1.5s ease-in-out infinite; /* Apply the glowing animation */
+}

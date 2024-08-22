@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #161616; /* Dark background for contrast */
+    font-family:  'Orbitron', sans-serif;
+    color: #fff; /* Light text color for readability */
+    overflow: hidden;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #202020; /* Dark background for header */
+    position: fixed; /* Fixed position at the top */
+    width: 100%;
+    top: 0;
+    box-sizing: border-box;
+    z-index: 1000; /* Ensure header is above other elements */
+}
+
+/* Site Title and Icon */
+.title-container {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    width: 40px; /* Adjust icon size */
+    margin-right: 10px;
+}
+
+.site-title {
+    font-size: 24px; /* Adjust title size */
+    color: #08f510; /* Neon green color for the title */
+    margin: 0;
+}
+
+/* Navigation Styling */
+.nav {
+    display: flex;
+    gap: 20px; /* Space between navigation links */
+}
+
+.nav a {
+    color: #fff; /* Text color */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Font size */
+}
+
+.nav a:hover {
+    color: #08f510; /* Change color on hover */
+}
+
+/* Main Content Styling */
+main {
+    padding: 80px 20px 20px; /* Add top padding to account for fixed header */
+    text-align: center;
+}
+
+h1 {
+    font-size: 20px; /* Adjust font size for heading */
+    color: #08f510; /* Neon green color */
+    margin: 20px 0;
+}
+
+/* Doors Section Styling */
+.doors {
+    display: flex;
+    justify-content: center;
+    gap: 150px; /* Space between images */
+    margin-top: 10%;
+}
+
+.image {
+    width: 150px; /* Adjust width of images */
+    height: auto; /* Maintain aspect ratio */
+    box-shadow: 0 0 15px rgba(7, 7, 7, 0.5); /* Neon glow effect */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.image:hover {
+    transform: scale(1.05); /* Zoom in effect on hover */
+}
+
+p {
+    font-size: 1rem; /* Font size for quests */
+    color: #ffffff; /* Orange color for quests */
+    margin-top: 10px;
+}

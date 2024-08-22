@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    background-color: #161616;
+    color: #fff;
+    font-family:'Orbitron', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background-color: #202020;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.global-icon {
+    width: 15px; /* Reduced size */
+    margin-right: 10px;
+}
+
+.site-title {
+    font-size: 12px; /* Reduced size */
+    color: #08f510;
+    margin: 0;
+}
+
+.logout-button {
+    background-color: #ff5722;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px; /* Decreased size */
+    cursor: pointer;
+    font-size: 10px; /* Adjusted font size */
+    position: absolute; /* Positioned to top-right */
+    top: 10px;
+    right: 20px;
+}
+
+.logout-button:hover {
+    background-color: #e64a19;
+}
+
+main {
+    padding: 10px; /* Reduced padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.main-image {
+    width: 40%; /* Reduced width */
+    max-width: 600px; /* Reduced max-width */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.welcome-section h1 {
+    font-size: 20px; /* Reduced size */
+    margin: -5px 0;
+    text-shadow: 0 0 10px #08f510, 0 0 20px #08f510, 0 0 30px #08f510;
+}
+
+.welcome-section p {
+    font-size: 1rem; /* Reduced size */
+    margin: 10px 0;
+}
+
+.welcome-section h2 {
+    font-size: 1.2rem; /* Reduced size */
+    margin: 15px 0;
+    color: #ff9800;
+}
+
+.realm-selection {
+    display: flex;
+    justify-content: center;
+    gap: 5px; /* Further reduced gap */
+}
+
+.realm {
+    background-color: #444; /* Darker color for the text box */
+    border-radius: 8px; /* Consistent border radius */
+    padding: 8px; /* Increased padding for better spacing */
+    width: 220px; /* Slightly increased width */
+    height: auto; /* Allow height to adjust based on content */
+    text-align: center;
+    box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
+    border: 2px solid #08f510; /* Add a border with color */
+}
+
+.realm-icon {
+    width: 39%; /* Adjusted width to fit within the .realm */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Consistent with the border radius of .realm */
+    margin-bottom: 8px; /* Adjusted margin for better spacing */
+}
+
+.realm h3 {
+    font-size: 0.9rem; /* Slightly increased size */
+    margin: 5px 0; /* Adjusted margin */
+    color: #ff9800; /* Keep the color */
+    padding: 2px; /* Added padding for text */
+    background-color: #202020; /* Background color for text */
+    border-radius: 4px; /* Rounded corners for text box */
+}
+
+.realm p {
+    font-size: 0.8rem; /* Adjusted size */
+    margin: 0;
+    padding: 2px; /* Added padding for text */
+    background-color: #202020; /* Background color for text */
+    border-radius: 4px; /* Rounded corners for text box */
+}
+
+.realm-link {
+    text-decoration: none; /* Remove default underline */
+    color: inherit; /* Inherit color from parent */
+}

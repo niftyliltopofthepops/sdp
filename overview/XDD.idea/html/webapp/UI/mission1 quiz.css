@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* To remove the scrollbar */
+    background: url('Images/mission1 interactive quiz.jpeg') no-repeat center center fixed;
+    background-size: cover; /* Ensure the image covers the entire viewport */
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #08f510; /* Futuristic green color */
+    font-family: 'Orbitron', sans-serif;
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.9); /* More opaque transparent black background */
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border-bottom: 2px solid #08f510; /* Green futuristic border */
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    width: 30px;
+}
+
+.site-title {
+    margin-left: 10px;
+    font-size: 24px; /* Slightly larger font */
+    color: #08f510;
+    font-family: 'Orbitron', sans-serif;
+}
+
+nav a {
+    color: #08f510; /* Futuristic green color */
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px; /* Slightly larger font */
+    transition: color 0.3s; /* Smooth transition */
+}
+
+nav a:hover {
+    color: #00ff00; /* Slightly different green on hover */
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding-top: 60px; /* Add padding to move content below header */
+    box-sizing: border-box;
+}
+
+.main-title {
+    margin-top: 10px; /* Adjust to move title down a bit */
+    color: #08f510;
+    font-size: 36px; /* Larger font for the main title */
+}
+
+.quiz-box {
+    background-color: rgba(0, 0, 139, 0.9); /* More opaque transparent blue background */
+    padding: 20px;
+    border-radius: 15px; /* Slightly more rounded corners */
+    text-align: center;
+    width: 50%;
+    max-width: 600px;
+    box-shadow: 0 0 15px #08f510; /* Futuristic green glow */
+}
+
+.next-question {
+    background-color: #08f510; /* Green futuristic button */
+    color: #000; /* Black text for contrast */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px; /* Add some space above the button */
+    font-size: 18px; /* Slightly larger font */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+    font-family: 'Orbitron', sans-serif;;
+}
+
+.next-question:hover {
+    background-color: #00ff00; /* Slightly different green on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.description{
+    color: rgb(10, 10, 10);
+    box-shadow: 0 0 15px#00ff00;
+    font-weight: bold;
+    background-color: rgb(27, 211, 13);
+}

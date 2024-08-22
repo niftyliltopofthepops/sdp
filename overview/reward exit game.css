@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+.body {
+    background-color: #161616;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: 'Orbitron', sans-serif;
+    color: #08f510;
+    text-align: center;
+    overflow: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.medal {
+    width: 250px; /* Adjust size as needed */
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    text-shadow: 0 0 10px #08f510, 0 0 20px #08f510, 0 0 30px #08f510;
+}
+
+h2 {
+    font-size: 1.2rem;
+    margin: 10px 0 20px 0;
+    color: white;
+}
+
+.explorer {
+    width: 120px; /* Adjust size as needed */
+    margin-bottom: 20px;
+}
+
+.claim-button, .exit-button {
+    width: 150px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #08f510;
+    border-radius: 10px;
+    background-color: black;
+    color: #08f510;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.claim-button:hover, .exit-button:hover {
+    background-color: #08f510;
+    color: black;
+}
+
+.claim-button:active, .exit-button:active {
+    transform: scale(0.98);
+}

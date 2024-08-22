@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #161616; /* Dark background for contrast */
+    font-family: 'Orbitron', sans-serif;
+    color: #fff; /* Light text color for readability */
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #202020; /* Dark background for header */
+    position: fixed; /* Fixed position at the top */
+    width: 100%;
+    top: 0;
+    box-sizing: border-box;
+    z-index: 1000; /* Ensure header is above other elements */
+}
+
+/* Site Title and Icon */
+.title {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    width: 40px; /* Adjust icon size */
+    margin-right: 10px;
+}
+
+.site-title {
+    font-size: 24px; /* Adjust title size */
+    color: #08f510; /* Neon green color for the title */
+    margin: 0;
+}
+
+/* Navigation Styling */
+.nav {
+    display: flex;
+    gap: 20px; /* Space between navigation links */
+}
+
+.nav a {
+    color: #fff; /* Text color */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Font size */
+}
+
+.nav a:hover {
+    color: #08f510; /* Change color on hover */
+}
+
+/* Main Content Styling */
+main {
+    padding: 80px 20px 20px; /* Add top padding to account for fixed header */
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem; /* Adjust font size for heading */
+    color: #08f510; /* Neon green color */
+    margin: 20px 0;
+}
+
+p {
+    font-size: 1.2rem; /* Larger font size for paragraph */
+    color: #fff; /* White color */
+    margin: 20px 0;
+}
+
+.image {
+    width: 25%; /* Adjust width of image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners for image */
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5); /* Neon glow effect */
+    margin-bottom: 20px; /* Space below image */
+}
+
+h2 {
+    font-size: 1.5rem; /* Font size for subheading */
+    color: #ff9800; /* Orange color */
+    margin: 20px 0;
+}
+
+/* Start Challenge Button Styling */
+.start-challenge {
+    background-color: #08f510; /* Neon green background */
+    color: #fff; /* White text */
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1rem; /* Font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.start-challenge:hover {
+    background-color: #06c32e; /* Darker green on hover */
+}

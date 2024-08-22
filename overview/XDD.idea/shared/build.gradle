@@ -1,0 +1,7 @@
+eclipse.project.name = appName + '-shared'
+
+dependencies {
+  implementation "org.codehaus.groovy:groovy-all:$groovyVersion"
+  implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+  implementation "org.scala-lang:scala-library:$scalaVersion"
+}

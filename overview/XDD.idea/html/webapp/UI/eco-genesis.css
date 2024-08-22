@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    color: #08f510; /* Futuristic green color */
+    font-family: 'Orbitron', sans-serif;
+    background-color: black; /* To enhance the futuristic feel */
+    overflow: hidden;
+}
+
+.header {
+    position: fixed; /* Fix header at the top */
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.9); /* More opaque transparent black background */
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border-bottom: 2px solid #08f510; /* Green futuristic border */
+    z-index: 1000;
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    width: 30px;
+}
+
+.site-title {
+    margin-left: 10px;
+    font-size: 24px; /* Slightly larger font */
+    color: #08f510;
+}
+
+nav a {
+    margin-left: 20px;
+    color: #08f510;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+nav a:nth-child(3) {
+    color: orange; /* Color for the active mission */
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 60px; /* Space for the fixed header */
+    padding: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    margin-top: -30px; /* Reduce the top margin */
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.image-container img {
+    width: 30vw;
+    height: 50vh;
+    border-radius: 10px; /* Add rounded corners */
+}
+
+.start-mission {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: orange; /* Button color */
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.start-mission:hover {
+    background-color: darkorange; /* Darker orange for hover effect */
+}
+
+h2 {
+    font-size: 15px;
+    margin-top: 20px;
+    color: white; /* Changed text color to white */
+}
+
+body::after {
+    content: "";
+    display: block;
+    height: 50px; /* Footer height */
+}
