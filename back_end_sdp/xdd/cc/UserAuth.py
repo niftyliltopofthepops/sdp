@@ -42,14 +42,16 @@ class register(views.APIView):
     serializer_class = ObtainTokenSerializer
 
     def post(self, request, *args, **kwargs):
-        serializer = self.serializer_class(data=request.data)
-        serializer.is_valid(raise_exception=True)
+        #serializer = self.serializer_class(data=request.data)
+        #serializer.is_valid(raise_exception=True)
+        data = request.data
+        username = data.get('username')
+        email = data.get('email')
+        password = data.get('password')
+        
 
-        username = serializer.validated_data.get('username')
-        email = serializer.validated_data.get('email')
-        password = serializer.validated_data.get('password')
-
-        user = CustomUser(username=username, email=email, password=password)
+        user = CustomUser(username=username, email=email)
+        user.set_password(password)
         user.save()
 
         return Response({'message': 'User Saved'}, status=200)
@@ -256,4 +258,158 @@ class quaadvanced(views.APIView):
         )
 
         return Response({'message': 'Score Saved'}, status=200)
+class egnssbeginner(views.APIView):
 
+    def post(self, request, *args, **kwargs):
+        username = request.query_params.get('username')
+        user = CustomUser.objects.get(username=username)
+
+        data = request.data
+        qn1 = data.get('qn1')
+        qn2 = data.get('qn2')
+        qn3 = data.get('qn3')
+        game_type = data.get('game_type')
+        game_name = data.get('game_name')
+
+        qs1 = 1 if qn1 == "styrofoam" else 0
+        qs2 = 1 if qn2 == "ice" else 0
+        qs3 = 1 if qn3 == "aluminium" else 0
+
+        total_score = qs1 + qs2 + qs3
+
+        Scores.objects.update_or_create(
+            user_id=user,
+            game_type=game_type,
+            game_name=game_name,
+            defaults={
+                'q1': qn1,
+                'q2': qn2,
+                'q3': qn3,
+                'score': total_score,
+            }
+        )
+
+        return Response({'message': 'Score Saved'}, status=200)
+    
+class egnssintermediate(views.APIView):
+
+    def post(self, request, *args, **kwargs):
+        username = request.query_params.get('username')
+        user = CustomUser.objects.get(username=username)
+
+        data = request.data
+        qn1 = data.get('qn1')
+        qn2 = data.get('qn2')
+        qn3 = data.get('qn3')
+        game_type = data.get('game_type')
+        game_name = data.get('game_name')
+
+        qs1 = 1 if qn1 == "120" else 0
+        qs2 = 1 if qn2 == "115.6" else 0
+        qs3 = 1 if qn3 == "120.8" else 0
+
+        total_score = qs1 + qs2 + qs3
+
+        Scores.objects.update_or_create(
+            user_id=user,
+            game_type=game_type,
+            game_name=game_name,
+            defaults={
+                'q1': qn1,
+                'q2': qn2,
+                'q3': qn3,
+                'score': total_score,
+            }
+        )
+
+        return Response({'message': 'Score Saved'}, status=200)
+
+class egnssadvanced(views.APIView):
+
+    def post(self, request, *args, **kwargs):
+        username = request.query_params.get('username')
+        user = CustomUser.objects.get(username=username)
+
+        data = request.data
+        qn1 = data.get('qn1')
+        qn2 = data.get('qn2')
+        qn3 = data.get('qn3')
+        game_type = data.get('game_type')
+        game_name = data.get('game_name')
+
+        qs1 = 1 if qn1 == "Vietnam" else 0
+        qs2 = 1 if qn2 == "North" else 0
+        qs3 = 1 if qn3 == "3000 gigatons" else 0
+
+        total_score = qs1 + qs2 + qs3
+
+        Scores.objects.update_or_create(
+            user_id=user,
+            game_type=game_type,
+            game_name=game_name,
+            defaults={
+                'q1': qn1,
+                'q2': qn2,
+                'q3': qn3,
+                'score': total_score,
+            }
+        )
+
+        return Response({'message': 'Score Saved'}, status=200)
+    
+class score_pass(views.APIView):
+
+    def get(self, request):
+        username = request.query_params.get('username')
+        game_name = request.query_params.get('game_name')
+        game_type = request.query_params.get('game_type')
+        user = CustomUser.objects.get(username=username)
+
+        obtainesscore = Scores.objects.get(user_id=user, game_name=game_name, game_type=game_type)
+        score = obtainesscore.score
+
+        if game_name=="space_academy" and game_type=="beginner" and score>=3:
+            output = "pass"
+        elif game_name=="space_academy" and game_type=="beginner" and score<3:
+            output = "failed"
+        elif game_name=="space_academy" and game_type=="intermedate" and score>=2:
+            output = "pass"
+        elif game_name=="space_academy" and game_type=="intermedate" and score<2:
+            output = "failed"
+        elif game_name=="space_academy" and game_type=="advanced" and score>=1:
+            output = "pass"
+        elif game_name=="space_academy" and game_type=="advanced" and score<1:
+            output = "failed"
+        elif game_name=="quantum" and game_type=="beginner" and score>=2:
+            output = "pass"
+        elif game_name=="quantum" and game_type=="beginner" and score<2:
+            output = "failed"
+        elif game_name=="quantum" and game_type=="intermedate" and score>=2:
+            output = "pass"
+        elif game_name=="quantum" and game_type=="intermedate" and score<2:
+            output = "failed"
+        elif game_name=="quantum" and game_type=="advanced" and score>=2:
+            output = "pass"
+        elif game_name=="quantum" and game_type=="advanced" and score<2:
+            output = "failed"
+        elif game_name=="ecogenesis" and game_type=="beginner" and score>=2:
+            output = "pass"
+        elif game_name=="ecogenesis" and game_type=="beginner" and score<2:
+            output = "failed"
+        elif game_name=="ecogenesis" and game_type=="intermedate" and score>=2:
+            output = "pass"
+        elif game_name=="ecogenesis" and game_type=="intermedate" and score<2:
+            output = "failed"
+        elif game_name=="ecogenesis" and game_type=="advanced" and score>=2:
+            output = "pass"
+        elif game_name=="ecogenesis" and game_type=="advanced" and score<2:
+            output = "failed"
+        
+
+        response_data = {
+            "output": output,
+            "score": score,
+
+        }
+        print(response_data)
+        return JsonResponse(response_data, status=200)

@@ -23,7 +23,7 @@ const SpcBeginner = () => {
             
             if (result) {
                 setSubmissionStatus('Your answers were submitted successfully!');
-                navigate("/sc_entry");
+                navigate("/spc_beginner_result");
             } else {
                 setSubmissionStatus('Failed to submit your answers. Please try again.');
             }

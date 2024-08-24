@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import Auth from '../../Auth';
 import { glo_ico, login_image } from '../../assets/Images';
+import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
     const [error, setError] = useState(null);
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault(); // Prevent the default form submission
@@ -16,6 +18,7 @@ const Signup = () => {
         if (success) {
             // Redirect to another page or show a success message
             console.log('Registration successful!');
+            navigate("/login")
         } else {
             // Show an error message
             setError('Registration failed. Please try again.');

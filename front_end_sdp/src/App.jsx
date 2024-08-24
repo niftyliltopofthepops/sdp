@@ -15,6 +15,10 @@ import QLbBeginner from './screens/qlb_msn/QLbBeginner';
 import QLbNTMDT from './screens/qlb_msn/QLbNTMDT';
 import QLbAdvanced from './screens/qlb_msn/QLbAdvanced';
 import Signup from './screens/front-end/Signup';
+import EcoGnssBeginner from './screens/ecognss_msn/EcoGnssBeginner';
+import EcoGnssNTMDT from './screens/ecognss_msn/EcoGnssNDMDT';
+import EcoGnssAdvanced from './screens/ecognss_msn/EcoGnssAdvanced';
+import SpcBeginnerResult from './screens/spc_msn/SpcBeginnerResult';
 
 
 const App = () => {
@@ -39,6 +43,10 @@ const App = () => {
         <Route path="qlb_intermediate" element={<QLbNTMDT/>} />
         <Route path="qlb_advanced" element={<QLbAdvanced/>} />
         <Route path="register" element={<Signup/>} />
+        <Route path="e-gnss_geodesy" element={<EcoGnssBeginner/>} />
+        <Route path="e-gnss_pressure_ergo" element={<EcoGnssNTMDT/>} />
+        <Route path="e-gnss_climate_permaculture" element={<EcoGnssAdvanced/>} />
+        <Route path="spc_beginner_result" element={<SpcBeginnerResult/>} />
       </Routes>
     
     </>

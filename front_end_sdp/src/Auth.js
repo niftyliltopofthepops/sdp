@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+
 const API_BASE_URL = 'http://localhost:8000';
 
 const Auth = {
@@ -28,7 +29,7 @@ const Auth = {
     },
 
     async userReg(email, password, username) {
-      console.log(username)
+
         try {
             const response = await axios.post(`${API_BASE_URL}/api/register/`, {
                 email,
@@ -189,7 +190,7 @@ const Auth = {
           console.error('Failed to add Answer:', error);
           return false;
       }
-  },
+    },
     async QLbIntermediateAns(qn1, qn2, qn3, game_type, game_name) {
       try {
           const token = localStorage.getItem('jwtToken'); // Use localStorage
@@ -223,7 +224,7 @@ const Auth = {
           console.error('Failed to add Answer:', error);
           return false;
       }
-  },
+    },
     async QLbAdvancedAns(qn1, qn2, qn3, game_type, game_name) {
       try {
           const token = localStorage.getItem('jwtToken'); // Use localStorage
@@ -257,6 +258,141 @@ const Auth = {
           console.error('Failed to add Answer:', error);
           return false;
       }
+    },
+    async EcoGenBegAns(qn1, qn2, qn3, game_type, game_name) {
+        try {
+            const token = localStorage.getItem('jwtToken'); // Use localStorage
+            const username = localStorage.getItem('userName'); // Use localStorage
+
+            const formData = new FormData();
+            formData.append('qn1', qn1);
+            formData.append('qn2', qn2);
+            formData.append('qn3', qn3);
+            formData.append('game_type', game_type);
+            formData.append('game_name', game_name);
+
+            const response = await axios.post(
+                `${API_BASE_URL}/api/egnssbeginner/`,
+                formData, 
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                        'Content-Type': 'multipart/form-data', 
+                    },
+                    params: {
+                        username: username,
+                    },
+                }
+            );
+
+            if (response.status === 200) {
+                return true;
+            }
+        } catch (error) {
+            console.error('Failed to add Answer:', error);
+            return false;
+        }
+},
+
+async EcoGenNTMDTAns(qn1, qn2, qn3, game_type, game_name) {
+    try {
+        const token = localStorage.getItem('jwtToken'); // Use localStorage
+        const username = localStorage.getItem('userName'); // Use localStorage
+
+        const formData = new FormData();
+        formData.append('qn1', qn1);
+        formData.append('qn2', qn2);
+        formData.append('qn3', qn3);
+        formData.append('game_type', game_type);
+        formData.append('game_name', game_name);
+
+        const response = await axios.post(
+            `${API_BASE_URL}/api/egnssintermediate/`,
+            formData, 
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    'Content-Type': 'multipart/form-data', 
+                },
+                params: {
+                    username: username,
+                },
+            }
+        );
+
+        if (response.status === 200) {
+            return true;
+        }
+    } catch (error) {
+        console.error('Failed to add Answer:', error);
+        return false;
+    }
+},
+
+async EcoGenAdvancedAns(qn1, qn2, qn3, game_type, game_name) {
+    try {
+        const token = localStorage.getItem('jwtToken'); // Use localStorage
+        const username = localStorage.getItem('userName'); // Use localStorage
+
+        const formData = new FormData();
+        formData.append('qn1', qn1);
+        formData.append('qn2', qn2);
+        formData.append('qn3', qn3);
+        formData.append('game_type', game_type);
+        formData.append('game_name', game_name);
+
+        const response = await axios.post(
+            `${API_BASE_URL}/api/egnssadvanced/`,
+            formData, 
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    'Content-Type': 'multipart/form-data', 
+                },
+                params: {
+                    username: username,
+                },
+            }
+        );
+
+        if (response.status === 200) {
+            return true;
+        }
+    } catch (error) {
+        console.error('Failed to add Answer:', error);
+        return false;
+    }
+},
+
+async getScore(game_name, game_type) {
+    try {
+      // Get the JWT token from AsyncStorage
+      const token = localStorage.getItem('jwtToken');
+      const username = localStorage.getItem('userName');
+      console.log(username)
+      if (!token) {
+        throw new Error('No token found');
+      }
+
+      // Make authenticated requests with the token
+      const response = await axios.get(`${API_BASE_URL}/api/score_pass`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        params: {
+          username: username, // Use the username obtained from AsyncStorage
+          game_name: game_name,
+          game_type: game_type,
+        },
+      });
+
+      if (response.status === 200) {
+        return response.data;
+      }
+    } catch (error) {
+      console.error('Failed to fetch user details:', error);
+      throw error;
+    }
   },
 };
 

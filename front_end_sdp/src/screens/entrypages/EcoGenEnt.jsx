@@ -1,5 +1,6 @@
 import React from 'react';
 import { glo_ico, eco_ig } from '../../assets/Images';
+import { Link } from 'react-router-dom';
 
 const EcoGenEnt = () => {
     return (
@@ -19,7 +20,7 @@ const EcoGenEnt = () => {
                 <h1 style={styles.h1}>Mission 3: Eco-Genesis</h1>
                 <div style={styles.imageContainer}>
                     <img src={eco_ig} alt="Eco Genesis" style={styles.image} />
-                    <button style={styles.startMission}>Start Mission</button>
+                    <Link to="/e-gnss_geodesy"><button style={styles.startMission}>Start Mission</button></Link>
                 </div>
                 <h2 style={styles.h2}>
                     Welcome to Eco-Genesis, the final frontier in our journey through X-Dimensional Discovery. Here, you 
