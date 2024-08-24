@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
+import { Link, useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
 import Auth from "../../Auth";
 import { login_image, glo_ico } from "../../assets/Images";
 
@@ -48,7 +48,7 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button onClick={handleLogin}>Begin Mission</button>
-        <button>Sign Up</button>
+        <Link to="/register"><button>Sign Up</button></Link>
         {error && <p style={{ color: "red" }}>{error}</p>}
       </div>
       <footer>

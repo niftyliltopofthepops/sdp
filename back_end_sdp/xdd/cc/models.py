@@ -23,10 +23,6 @@ class User(models.Model):
     id = models.AutoField(primary_key=True)
     admin = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
     role = models.CharField(max_length=255, null=True)
-    dob = models.DateField(null=True)
-    image = models.FileField(null=True)
-    phone_number = models.TextField(null=True)
-    address = models.TextField(null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now_add=True)
     fcm_token = models.TextField(default="")
@@ -35,6 +31,11 @@ class User(models.Model):
 
 class Scores(models.Model):
     id = models.AutoField(primary_key=True)
+    q1 = models.CharField(max_length=255, null=True)
+    q2 = models.CharField(max_length=255, null=True)
+    q3 = models.CharField(max_length=255, null=True)
+    q4 = models.CharField(max_length=255, null=True)
+    q5 = models.CharField(max_length=255, null=True)
     game_name = models.CharField(max_length=255, null=True)
     game_type = models.CharField(max_length=255, null=True)
     user_id = models.ForeignKey(CustomUser, on_delete=models.CASCADE)

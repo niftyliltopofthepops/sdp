@@ -1,40 +1,41 @@
 import React from 'react';
+import { glo_ico, mn_menu, sc_acad, quant_lb, eco_gen } from '../../assets/Images';
 
 const MissionMenu = () => {
   return (
     <div style={styles.body}>
       <header style={styles.header}>
         <div style={styles.headerContent}>
-          <img src="Images/Global icon.png" alt="Global Icon" style={styles.globalIcon} />
+          <img src={glo_ico} alt="Global Icon" style={styles.globalIcon} />
           <h1 style={styles.siteTitle}>X-Dimensional Discovery</h1>
         </div>
         <button style={styles.logoutButton}>Logout</button>
       </header>
       <main style={styles.main}>
-        <img src="Images/Mission Menu .jpeg" alt="Main Image" style={styles.mainImage} />
+        <img src={mn_menu} alt="Main Image" style={styles.mainImage} />
         <div style={styles.welcomeSection}>
           <h1 style={styles.welcomeHeading}>Welcome to Cybernetics Cityscape</h1>
           <p style={styles.welcomeText}>Your central hub for all activities in X-Dimensional Discovery</p>
           <h2 style={styles.welcomeSubHeading}>Please select a realm to enter</h2>
         </div>
         <div style={styles.realmSelection}>
-          <a href="space-academy.html" style={styles.realmLink}>
+          <a href="/sc_entry" style={styles.realmLink}>
             <div style={styles.realm}>
-              <img src="Images/space acedemy.jpeg" alt="Space Academy" style={styles.realmIcon} />
+              <img src={sc_acad} alt="Space Academy" style={styles.realmIcon} />
               <h3 style={styles.realmTitle}>Space Academy</h3>
               <p style={styles.realmDescription}>Train and prepare for interstellar missions</p>
             </div>
           </a>
-          <a href="quantum-lab.html" style={styles.realmLink}>
+          <a href="/qntm_entry" style={styles.realmLink}>
             <div style={styles.realm}>
-              <img src="Images/quantum lab.jpg" alt="Quantum Lab" style={styles.realmIcon} />
+              <img src={quant_lb} alt="Quantum Lab" style={styles.realmIcon} />
               <h3 style={styles.realmTitle}>Quantum Lab</h3>
               <p style={styles.realmDescription}>Research and develop cutting-edge technologies</p>
             </div>
           </a>
-          <a href="eco-genesis.html" style={styles.realmLink}>
+          <a href="/egn_entry" style={styles.realmLink}>
             <div style={styles.realm}>
-              <img src="Images/eco-genesis.jpeg" alt="Eco-Genesis" style={styles.realmIcon} />
+              <img src={eco_gen} alt="Eco-Genesis" style={styles.realmIcon} />
               <h3 style={styles.realmTitle}>Eco-Genesis</h3>
               <p style={styles.realmDescription}>Cultivate and harvest bioengineered crops</p>
             </div>
